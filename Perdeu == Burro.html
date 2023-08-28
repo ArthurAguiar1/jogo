@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+    <meta charset='utf=8'>
+    <title>Projeto</title>
+    <style>
+      body
+      {
+         background-color: black;
+         color: white;
+         text-align: center;
+         text-size-adjust: 50px;
+         font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+ </head>
+ <body>
+    <script lan="JavaScript">
+     var qntd,no,lmi = 1,lma = 100,vez,chute;
+      no = Math.floor(Math.random() * 100+1);
+      do 
+      {
+        qntd = parseInt(window.prompt("Qual a quantidade de jogadores: "));
+      } while ((qntd < 2) || ( qntd > 5 ));
+      vez = 0;
+
+      do   
+      { 
+         if (vez >= qntd)
+         {
+            vez = 1;
+         }
+         else
+         {
+            if (vez < qntd)
+            {
+               vez++;
+            }
+         }
+
+         do
+         {
+         chute = parseInt(window.prompt("Jogador " + vez + " digite um número entre " + lmi + " e " + lma ));
+         } while ((chute >= lma) || (chute <= lmi));
+
+         if (chute < lma)
+         {
+            if (chute > no)
+            {
+            lma = chute;
+            }
+         }
+
+         if (chute > lmi)
+         {
+            if (chute < no)
+            {
+            lmi = chute;
+            }
+         }
+         
+      } while(chute != no);
+
+      document.write("<Font size='15px'>O jogador " + vez + " perdeu! O número que foi escolhido é o: " + no +"<br> Parabéns burro 👏👏👏 jogou o que sabe!!!! </font><br>Feito Por Alexandre Pinheiro e Arthur Gomes de Aguiar🙌👌✔️✔️✔️");
+
+    </script>
+ </body>
+</html>
